@@ -9,6 +9,7 @@ header, #main-body, footer { max-width: 900px; }
 .left { float: left; }
 
 header {
+  letter-spacing: 5px;
   border-bottom: 7px solid $headerBlue;
   padding: 10px 2px;
   overflow: auto;
@@ -179,7 +180,6 @@ div.field, div.form-options { margin-bottom: 10px; }
     color: $headerBlue;
     span {
       font-weight: normal;
-      letter-spacing: 5px;
     }
   }
   p {
