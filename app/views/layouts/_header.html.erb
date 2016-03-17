@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <div>
+      <%= link_to "Handlebars", root_path %>
+    </div>
+  </nav>
+</header>
+<div id="flash-div">
+  <%= content_tag(:p, notice, class: 'notice') if notice.present? %>
+  <%= content_tag(:p, alert, class: 'alert') if alert.present? %>
+</div>

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  url_string: MyText
-  handles: MyText
-  url_hash: MyString
+  url_string: http://www.example.com
+  handles: {good: {IBM: {handle: "IBM", profile_name: "IBM", location: "Armonk", joined: "Joined January 2009", url: "http://www.ibm.com", tweets: "5,225", following: "6,548", followers: "283,557", likes: "376", tweet_title: "IBM @IBM * 4h", tweet_text: "ok"}}, bad: ['@bad']} 
+  url_hash: "3b523d17ff561f4126b80ede962a8ec1"
 
 two:
-  url_string: MyText
-  handles: MyText
-  url_hash: MyString
+  url_string: http://www.example.com
+  handles: handletext
+  url_hash: "3b523d17ff561f4126b80ede962a8ec1"

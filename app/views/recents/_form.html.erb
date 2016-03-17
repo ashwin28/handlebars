@@ -1,0 +1,21 @@
+<%= form_for(@recent) do |f| %>
+  <% if @recent.errors.any? %>
+    <div id="error-explanation">
+      <h2>The form has <%= pluralize(@recent.errors.count, "error") %>:</h2>
+      <ul>
+        <% @recent.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url_string %>
+    <%= f.text_field :url_string %>
+  </div>
+  
+  <div class="form-options">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('click', 'a', function(e){
+  $( "span#loading" ).show( "slow" );
+})
+
+$(document).on('submit', '#new_recent', function(e){
+  $( "span#loading" ).show( "slow" );
+})

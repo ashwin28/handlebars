@@ -1,0 +1,24 @@
+<% @profile_cards.each_with_index do |profile_card, index| %>
+  <%= content_tag :div, class: "profile_card", id:"profile_card_#{index+1}" do %>
+    <h3>
+      <%= link_to profile_card.last[:profile_name], "https://twitter.com/#{profile_card.last[:handle].to_s}" %>
+      <span><strong><%= "@" + profile_card.last[:handle] %></strong></span><%= %>
+    </h3>
+    <% [:location, :joined, :url, :tweets, :following, :followers, :likes].each do |e| %>
+      <% if profile_card.last.include?(e) && e != :url && !profile_card.last[e].include?('recents/') %>
+        <p><span><strong><%= e.to_s.capitalize %>:</strong> <%= profile_card.last[e] %></span></p>
+      <% elsif profile_card.last.include?(e) && e == :url && !profile_card.last[e].include?('recents/') %>
+        <p><span><strong><%= e.to_s.capitalize %>:</strong>
+           <%= link_to profile_card.last[e], profile_card.last[e] %></span>
+        </p>
+      <% end %>
+    <% end %>
+
+    <div>
+      <p><span><strong>Most Recent Tweet:</strong></span></p>
+      <p class="tweet_title"><%= profile_card.last[:tweet_title] %></p>
+      <p class="tweet_text"><%= profile_card.last[:tweet_text] %></p>
+    </div>
+
+  <% end %>
+<% end %>

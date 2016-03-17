@@ -1,0 +1,11 @@
+<h1>Showing parsed results for <%= @recent.url_string %><span id="last-checked" class='right'>Last Checked: <%= time_ago_in_words(@recent.updated_at) %> ago</span></h1>
+
+<p>The following are bad twitter handles that were found: <%= @bad_handles unless @bad_handles.nil? %></p>
+
+<div id="recent">
+  <%= render 'profile_card' unless @profile_cards.nil? %>
+</div>
+
+<div id="index-link">
+  <%= link_to 'Back', recents_path %>
+</div>

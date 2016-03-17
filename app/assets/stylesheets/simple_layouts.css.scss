@@ -1,0 +1,232 @@
+$headerBlue: #333399;
+$formFieldBGC: #F0F0F0;
+
+* { margin: 0 auto; }
+
+header, #main-body, footer { max-width: 900px; }
+
+.right { float: right; }
+.left { float: left; }
+
+header {
+  letter-spacing: 5px;
+  border-bottom: 7px solid $headerBlue;
+  padding: 10px 2px;
+  overflow: auto;
+}
+
+#loading {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.72;
+  z-index: 10;
+  span {
+    font-size: 28px;
+    display: table;
+    padding-top: 225px;
+    color: red;
+  }
+}
+
+#last-checked {
+  font-size: 10px;
+}
+
+#flash-div {
+  min-height: 30px;
+  margin: 5px auto;
+  p { text-align: center; padding-bottom: 5px; }
+  .notice { color: green; border: 2px solid green; }
+  .alert { color: red; border: 2px solid red; }
+}
+
+footer {
+  border-top: 7px solid $headerBlue;
+  padding: 10px 2px;
+  overflow: auto;
+  margin-top: 40px;
+  p { text-align: center; }
+}
+
+nav div { display: inline-block; }
+
+#main-body {
+  background-color: #fff;
+  color: #333;
+  width: 80%;
+  h1 {
+    font-size: 22px;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 16px;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+  }
+  form {
+    text-align: left;
+    max-width: 600px;
+    label {
+      width: 200px;
+      display: block;
+      text-align: right;
+      padding: 10px;
+      float: left;
+      line-height: 21px;
+      background-color: $formFieldBGC;
+      border: 2px solid #ccc;
+      margin-right: 20px;
+    }
+    input[type=text] {
+      font-size: 14px;
+      width: 328px;
+      padding: 12px;
+      border: 2px solid #ccc;
+    }
+    input[type=text]:hover, input[type=password]:hover,
+    input[type=text]:focus, input[type=password]:focus,
+    input[type=text]:active, input[type=password]:active {
+      border: 2px solid $headerBlue;
+    }
+    input[type=submit] {
+      font-size: 13px;
+      width: 100%;
+      height: 40px;
+      &:hover, &:focus {
+        border: 2px solid $headerBlue;
+      }
+    }
+  }
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+a {
+  color: #D95E16;
+  padding: 0 6px 0 8px;
+  text-decoration: none;
+  &:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid $headerBlue;
+  }
+}
+
+div.field, div.form-options { margin-bottom: 10px; }
+
+.field_with_errors {
+  label, input[type=text], input[type=password] {
+    border: 2px solid red !important;
+  }
+}
+
+#error-explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: $formFieldBGC;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul {
+    padding: 5px;
+    li {
+      font-size: 12px;
+      list-style: none;
+    }
+  }
+}
+
+#index-link {
+  margin-top: 30px;
+  a {
+    display: table;
+    font-size: 15px;
+    padding: 10px 60px;
+    background-color: $formFieldBGC;
+    border: 2px solid #ccc;
+    &:hover, &:focus {
+      border: 2px solid $headerBlue;
+    }
+  }
+}
+
+.recent, .profile_card {
+  padding: 10px;
+  margin: 10px auto;
+  h3 {
+    font-size: 16px;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    color: $headerBlue;
+    span {
+      font-weight: normal;
+      letter-spacing: 5px;
+    }
+  }
+  p {
+    padding-top: 3px;
+    span {
+      display: inline-block;
+      min-width: 200px;
+    }
+    span#email {
+      min-width: 400px;
+    }
+  }
+  .tweet_title, .tweet_text {
+    padding-left: 20px;
+  }
+  .tweet_text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  body { 
+    min-width: 300px;
+  }
+  #error-explanation {
+    min-width: 200px;
+    width: 65%;
+  }
+  div.field {
+    display: table;
+    width: 95%;
+  }
+  form {
+    min-width: 300px;
+    width: 100%;
+    label { 
+      text-align: center !important;
+      padding: 12px !important;
+    }
+    label, input[type=text] {
+      clear: both !important;
+      margin: 0 !important;
+      min-width: 170px !important;
+      width: 91.5% !important;
+    }
+  }
+}
+
+
