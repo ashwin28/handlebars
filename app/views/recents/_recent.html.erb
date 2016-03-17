@@ -1,13 +1,13 @@
-<%= div_for recent do %>
-  <h3>
-    <%= link_to recent.url_string, recent_path(recent) %>
-    <span class="right" id='contact-options'>
-      <span id="last-checked">Last Checked: <%= time_ago_in_words(recent.updated_at) %> ago</span> |
-      <%= link_to 'Delete', recent_path(recent), data: { confirm: 'Are you sure?' },
-                  method: :delete %>
-    </span>
-  </h3>
-  <% if recent.handles[:good].keys %>
-  <p><span><strong>Good Handles:</strong> <%= recent.handles[:good].keys.map{|x| "@"+x.to_s} %></span> <span><strong>Count:</strong> <%= recent.handles[:good].keys.size %></span></p>
+<% unless recent.handles[:good].blank? %>
+  <%= div_for recent do %>
+    <h3>
+      <%= link_to recent.url_string, recent_path(recent) %>
+      <span class="right" id='contact-options'>
+        <span id="last-checked">Last Checked: <%= time_ago_in_words(recent.updated_at) %> ago</span> |
+        <%= link_to 'Delete', recent_path(recent), data: { confirm: 'Are you sure?' },
+                    method: :delete %>
+      </span>
+    </h3>
+    <p><span><strong>Good Handles:</strong> <%= recent.handles[:good].keys.map{|x| "@"+x.to_s} %></span> <span><strong>Count:</strong> <%= recent.handles[:good].keys.size %></span></p>
   <% end %>
 <% end %>

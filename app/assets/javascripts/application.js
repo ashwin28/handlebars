@@ -17,8 +17,10 @@
 
 $(document).on('click', 'a', function(e){
   $( "span#loading" ).show( "slow" );
+  $('span#loading').delay(2500).fadeOut('slow');
 })
 
 $(document).on('submit', '#new_recent', function(e){
   $( "span#loading" ).show( "slow" );
+  $('span#loading').delay(2500).fadeOut('slow');
 })

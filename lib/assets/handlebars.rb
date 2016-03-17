@@ -74,10 +74,7 @@ def verify_handle(handle)
   # if the twitter profile exists return relavent info
   # ProfileHeaderCard-name is as a css class test for existing user
   if status.first == '200' && full_string.include?('ProfileHeaderCard-name')
-    #temp = 
     get_relevent_user_info(full_string)
-    # puts temp.inspect
-    # temp
   # profile could not be found, return bad handle
   else
     handle

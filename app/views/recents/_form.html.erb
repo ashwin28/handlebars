@@ -12,10 +12,10 @@
 
   <div class="field">
     <%= f.label :url_string %>
-    <%= f.text_field :url_string %>
+    <%= f.text_field :url_string, placeholder: "http:// or https:// . . ." %>
   </div>
   
   <div class="form-options">
-    <%= f.submit %>
+    <%= f.submit "Find Twitter Handles"%>
   </div>
 <% end %>

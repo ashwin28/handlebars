@@ -8,7 +8,7 @@
       <% if profile_card.last.include?(e) && e != :url && !profile_card.last[e].include?('recents/') %>
         <p><span><strong><%= e.to_s.capitalize %>:</strong> <%= profile_card.last[e] %></span></p>
       <% elsif profile_card.last.include?(e) && e == :url && !profile_card.last[e].include?('recents/') %>
-        <p><span><strong><%= e.to_s.capitalize %>:</strong>
+        <p><span><strong>URL:</strong>
            <%= link_to profile_card.last[e], profile_card.last[e] %></span>
         </p>
       <% end %>
