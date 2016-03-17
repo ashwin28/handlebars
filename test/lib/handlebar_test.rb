@@ -41,6 +41,8 @@ class HandlebarTest < ActionView::TestCase
     s8 = '@abcdeabcdeabcdef <div>@ab<div>cdeabcd<div>eabcdef</div></div></div>'
     # get handle from html comments
     s9 = '<!-- Write your comments here and tweet about it @CommentUrCode -->'
+    # more parsing from links
+    s10 = '@meme http://twitter.com/ibm  http://xxtwitter.com/ok href=https://www.twitter.com/umichDEI'
 
     assert_equal parse_relevent_handles(s1), []
     assert_equal parse_relevent_handles(s2), ["@ibm"]
@@ -51,6 +53,7 @@ class HandlebarTest < ActionView::TestCase
     assert_equal parse_relevent_handles(s7), ["@appleface", "@sayshi"]
     assert_equal parse_relevent_handles(s8), []
     assert_equal parse_relevent_handles(s9), ["@commenturcode"]
+    assert_equal parse_relevent_handles(s10), ["@meme", "@ibm", "@umichdei"]
   end
 
   test "verify_handle and get_relevent_user_info method's returns" do

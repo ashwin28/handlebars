@@ -51,7 +51,7 @@ def parse_relevent_handles(string)
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   # which is taken from michael hartl's rails book
   # gsub '..//twitter.com/' => ' @' to account for hiddden handles inside href
-  first_filter = string.gsub(/<\w*>*|<*\/*\w*>/, '').gsub('//twitter.com/', ' @')
+  first_filter = string.gsub(/<\w*>*|<*\/*\w*>/, '').gsub(/\/\/(www.)*twitter.com\//, ' @')
                        .gsub(/[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+/i, '')
 
   # split by space, since handles cannot include space and filter by including @
