@@ -115,7 +115,7 @@ def get_relevent_user_info(string)
   end
 
   if url = doc.at_css("span.ProfileHeaderCard-urlText a")
-    result[:url] = url.attributes["title"].value
+    result[:url] = url.attributes["title"].value if url.attributes["title"]
   end
 
   # the following will have format # description
